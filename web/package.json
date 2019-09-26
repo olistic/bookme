@@ -1,0 +1,14 @@
+{
+  "name": "@bookme/web",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "serve"
+  },
+  "repository": "https://github.com/olistic/bookme/tree/master/web",
+  "author": "Matías Olivera <moliverafreire@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^11.1.0"
+  }
+}
