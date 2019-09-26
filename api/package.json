@@ -1,0 +1,9 @@
+{
+  "name": "@bookme/api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {},
+  "repository": "https://github.com/olistic/bookme/tree/master/api",
+  "author": "Matías Olivera <moliverafreire@gmail.com>",
+  "license": "MIT"
+}
