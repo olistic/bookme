@@ -1,0 +1,3 @@
+# Ignore monorepo dependency directories
+api/node_modules/*
+web/node_modules/*
