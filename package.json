@@ -1,24 +1,16 @@
 {
   "name": "bookme",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "lint": "eslint --cache .",
     "lint:fix": "npm run lint --fix",
     "pretest": "npm run lint",
     "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/olistic/bookme.git"
-  },
+  "repository": "https://github.com/olistic/bookme.git",
   "author": "Matías Olivera <moliverafreire@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/olistic/bookme/issues"
-  },
-  "homepage": "https://github.com/olistic/bookme#readme",
   "devDependencies": {
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
