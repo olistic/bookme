@@ -3,6 +3,7 @@
     "sourceType": "script"
   },
   "rules": {
+    "global-require": "off",
     "strict": ["error", "safe"]
   }
 }
