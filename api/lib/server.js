@@ -7,18 +7,16 @@ const server = Hapi.server({
   host: 'localhost',
 });
 
-server.route({
-  method: 'GET',
-  path: '/',
-  handler: () => 'Hello World!',
-});
+const plugins = [require('./routes')];
 
 exports.init = async () => {
+  await server.register(plugins);
   await server.initialize();
   return server;
 };
 
 exports.start = async () => {
+  await server.register(plugins);
   await server.start();
   console.log(`Server running at: ${server.info.uri}`); // eslint-disable-line no-console
   return server;
