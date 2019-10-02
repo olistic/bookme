@@ -6,7 +6,8 @@
     "lint": "eslint --cache .",
     "lint:fix": "npm run lint --fix",
     "pretest": "npm run lint",
-    "test": "jest"
+    "test": "jest",
+    "mongodb": "run-rs -k -v 4.2.0"
   },
   "repository": "https://github.com/olistic/bookme.git",
   "author": "Matías Olivera <moliverafreire@gmail.com>",
@@ -20,7 +21,8 @@
     "husky": "^3.0.5",
     "jest": "^24.9.0",
     "lint-staged": "^9.3.0",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "run-rs": "^0.6.0"
   },
   "husky": {
     "hooks": {
