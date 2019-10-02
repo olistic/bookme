@@ -7,7 +7,7 @@ const server = Hapi.server({
   host: 'localhost',
 });
 
-const plugins = [require('./routes')];
+const plugins = [require('./connectors'), require('./routes')];
 
 exports.init = async () => {
   await server.register(plugins);
