@@ -5,6 +5,7 @@ const login = `
       <input type="email" />
       <input type="password" />
       <button type="submit">Log in</button>
+      <p>Don't have an account? <a href="/signup">Sign up</a></p>
     </form>
   </div>
 `;
