@@ -5,5 +5,13 @@
   "rules": {
     "global-require": "off",
     "strict": ["error", "safe"]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.config.js"],
+      "rules": {
+        "strict": "off"
+      }
+    }
+  ]
 }
