@@ -1,4 +1,5 @@
 module.exports = {
   displayName: '@bookme/api',
-  testEnvironment: 'node',
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  testEnvironment: '<rootDir>/../jest-environment-mongodb',
 };
