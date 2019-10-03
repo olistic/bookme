@@ -1,6 +1,6 @@
 'use strict';
 
-const { init } = require('./server');
+const { init } = require('../server');
 
 describe('GET /', () => {
   let server;

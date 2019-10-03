@@ -1,12 +1,10 @@
 'use strict';
 
+const hello = require('./hello');
+
 module.exports = {
   name: 'routes',
   register: server => {
-    server.route({
-      method: 'GET',
-      path: '/',
-      handler: () => 'Hello, world!',
-    });
+    server.route([...hello]);
   },
 };
