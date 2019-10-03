@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 const uri = process.env.MONGODB_URI;
 const options = {
+  useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };

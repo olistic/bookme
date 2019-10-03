@@ -6,5 +6,15 @@
     "jest": true,
     "node": true
   },
-  "extends": ["airbnb-base", "plugin:prettier/recommended"]
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "rules": {
+    "no-underscore-dangle": [
+      "error",
+      { "allow": ["__MONGO_DB_NAME__", "__MONGO_URI__"] }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.test.js", "jest-environment-mongodb.js"] }
+    ]
+  }
 }

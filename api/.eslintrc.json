@@ -7,7 +7,7 @@
   },
   "overrides": [
     {
-      "files": ["**/*.config.js"],
+      "files": ["jest.config.js", "jest.setup.js"],
       "rules": {
         "strict": "off"
       }
