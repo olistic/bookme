@@ -7,7 +7,11 @@ const User = require('../models/User');
 const validate = async decoded => {
   const { sub: userId } = decoded;
   const user = await User.findById(userId);
-  return { isValid: !!user };
+  if (!user) {
+    return { isValid: false };
+  }
+
+  return { isValid: true, credentials: user };
 };
 
 const jwt = async server => {
