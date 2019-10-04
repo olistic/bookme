@@ -2,6 +2,7 @@
 
 const Hapi = require('@hapi/hapi');
 
+const auth = require('./auth');
 const connectors = require('./connectors');
 const routes = require('./routes');
 
@@ -17,7 +18,7 @@ exports.init = async () => {
 };
 
 exports.start = async () => {
-  await server.register([connectors, routes]);
+  await server.register([auth, connectors, routes]);
   await server.start();
   console.log(`Server running at: ${server.info.uri}`); // eslint-disable-line no-console
   return server;
