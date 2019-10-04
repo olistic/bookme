@@ -1,10 +1,10 @@
 'use strict';
 
-const hello = require('./hello');
+const sessions = require('./sessions');
 
 module.exports = {
   name: 'routes',
   register: server => {
-    server.route([...hello]);
+    server.route([...sessions]);
   },
 };
