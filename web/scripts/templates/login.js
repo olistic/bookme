@@ -1,4 +1,6 @@
-const login = `
+import { html } from '../../node_modules/lit-html/lit-html.js';
+
+const login = () => html`
   <div>
     <h1>Log in to bookme</h1>
     <form>

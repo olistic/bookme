@@ -1,4 +1,6 @@
-const signup = `
+import { html } from '../../node_modules/lit-html/lit-html.js';
+
+const signup = () => html`
   <div>
     <h1>Sign up for bookme</h1>
     <form>
