@@ -1,6 +1,7 @@
-import { login, notFound, signup } from './templates.js';
+import { home, login, notFound, signup } from './templates.js';
 
 const routes = {
+  '/': home,
   '/login': login,
   '/signup': signup,
 };
