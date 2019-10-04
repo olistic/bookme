@@ -12,13 +12,13 @@ const server = Hapi.server({
 });
 
 exports.init = async () => {
-  await server.register(routes);
+  await server.register([auth, routes]);
   await server.initialize();
   return server;
 };
 
 exports.start = async () => {
-  await server.register([auth, connectors, routes]);
+  await server.register([connectors, auth, routes]);
   await server.start();
   console.log(`Server running at: ${server.info.uri}`); // eslint-disable-line no-console
   return server;
