@@ -1,6 +1,6 @@
 'use strict';
 
-const Boom = require('boom');
+const Boom = require('@hapi/boom');
 
 const User = require('../../models/User');
 const { createAccessToken } = require('../../utils/tokens');
