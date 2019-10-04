@@ -28,7 +28,7 @@ describe('/sessions', () => {
       },
     };
 
-    test('fetches user, compares password and responds with 201 and created session', async () => {
+    test('responds with 201 and created session if user exists and password matches', async () => {
       const user = {
         id: '5d9752a543f1c5869e22c30d',
         comparePassword: jest.fn().mockResolvedValue(true),
@@ -47,6 +47,30 @@ describe('/sessions', () => {
       expect(response.statusCode).toBe(201);
       const payload = JSON.parse(response.payload);
       expect(payload.token).toBe('token');
+    });
+
+    test('responds with 400 if email is not provided', async () => {
+      const response = await server.inject({
+        ...injectOptions,
+        payload: { ...injectOptions.payload, email: undefined },
+      });
+      expect(response.statusCode).toBe(400);
+    });
+
+    test('responds with 400 if email is not valid', async () => {
+      const response = await server.inject({
+        ...injectOptions,
+        payload: { ...injectOptions.payload, email: 'invalid' },
+      });
+      expect(response.statusCode).toBe(400);
+    });
+
+    test('responds with 400 if password is not provided', async () => {
+      const response = await server.inject({
+        ...injectOptions,
+        payload: { ...injectOptions.payload, password: undefined },
+      });
+      expect(response.statusCode).toBe(400);
     });
 
     test("responds with 401 and generic error message if user doesn't exist", async () => {

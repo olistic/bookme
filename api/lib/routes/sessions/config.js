@@ -1,9 +1,9 @@
 'use strict';
 
 const handlers = require('./handlers');
+const validations = require('./validations');
 
-module.exports = {
-  create: {
-    handler: handlers.create,
-  },
+exports.create = {
+  handler: handlers.create,
+  validate: validations.create,
 };
