@@ -85,7 +85,6 @@ describe('User', () => {
       expect.assertions(2);
 
       user.email = undefined;
-
       try {
         await user.validate();
       } catch (err) {
@@ -98,7 +97,6 @@ describe('User', () => {
       expect.assertions(2);
 
       user.password = undefined;
-
       try {
         await user.validate();
       } catch (err) {
@@ -111,7 +109,6 @@ describe('User', () => {
       expect.assertions(2);
 
       user.firstName = undefined;
-
       try {
         await user.validate();
       } catch (err) {
@@ -124,7 +121,6 @@ describe('User', () => {
       expect.assertions(2);
 
       user.lastName = undefined;
-
       try {
         await user.validate();
       } catch (err) {

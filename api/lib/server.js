@@ -11,7 +11,7 @@ const server = Hapi.server({
 });
 
 exports.init = async () => {
-  await server.register([routes]);
+  await server.register(routes);
   await server.initialize();
   return server;
 };
