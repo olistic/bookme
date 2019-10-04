@@ -4,8 +4,14 @@ const login = () => html`
   <div>
     <h1>Log in to bookme</h1>
     <form>
-      <input type="email" />
-      <input type="password" />
+      <label>
+        Email:
+        <input type="email" />
+      </label>
+      <label>
+        Password:
+        <input type="password" />
+      </label>
       <button type="submit">Log in</button>
       <p>Don't have an account? <a href="/signup">Sign up</a></p>
     </form>
