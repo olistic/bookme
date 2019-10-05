@@ -1,4 +1,5 @@
-import { login, signup } from './templates.js';
+import login from './templates/login.js';
+import signup from './templates/signup.js';
 import { redirect } from './utils/router.js';
 
 const routes = {
