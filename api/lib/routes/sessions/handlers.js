@@ -10,7 +10,7 @@ const unauthorizedError = Boom.unauthorized('Invalid email/password combination'
 exports.create = async (request, h) => {
   const { email, password } = request.payload;
 
-  const user = await User.findOne({ email }).select('+password');
+  const user = await User.findOne({ email });
   if (!user) {
     throw unauthorizedError;
   }

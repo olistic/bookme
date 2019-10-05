@@ -1,5 +1,6 @@
 'use strict';
 
+const User = require('../../models/User');
 const { init } = require('../../server');
 
 describe('/me', () => {
@@ -20,12 +21,12 @@ describe('/me', () => {
       url: baseUrl,
       auth: {
         strategy: 'jwt',
-        credentials: {
-          id: '5d9752a543f1c5869e22c30d',
+        credentials: new User({
           email: 'millenniumfalcon@mail.com',
+          password: 'hashedPassword',
           firstName: 'Han',
           lastName: 'Solo',
-        },
+        }),
       },
     };
 
@@ -34,10 +35,10 @@ describe('/me', () => {
 
       expect(response.statusCode).toBe(200);
       const payload = JSON.parse(response.payload);
-      expect(payload.id).toBe('5d9752a543f1c5869e22c30d');
       expect(payload.email).toBe('millenniumfalcon@mail.com');
       expect(payload.firstName).toBe('Han');
       expect(payload.lastName).toBe('Solo');
+      expect(payload.password).not.toBeDefined();
     });
 
     test('responds with 401 if not authenticated', async () => {

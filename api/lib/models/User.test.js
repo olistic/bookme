@@ -69,12 +69,6 @@ describe('User', () => {
         const matches = await savedUser.comparePassword('wrong');
         expect(matches).toBe(false);
       });
-
-      test('is not retrieved by default', async () => {
-        const savedUser = await user.save();
-        const foundUser = await User.findById(savedUser.id);
-        expect(foundUser.password).not.toBeDefined();
-      });
     });
 
     test('has a fullName virtual field', () => {

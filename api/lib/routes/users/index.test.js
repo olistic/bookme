@@ -28,12 +28,12 @@ describe('/users', () => {
     };
 
     test('responds with 201 and created user', async () => {
-      const user = {
-        id: '5d9752a543f1c5869e22c30d',
+      const user = new User({
         email: 'millenniumfalcon@mail.com',
+        password: 'hashedPassword',
         firstName: 'Han',
         lastName: 'Solo',
-      };
+      });
       jest.spyOn(User, 'create').mockResolvedValue(user);
       const response = await server.inject(injectOptions);
 
@@ -46,10 +46,10 @@ describe('/users', () => {
       });
       expect(response.statusCode).toBe(201);
       const payload = JSON.parse(response.payload);
-      expect(payload.id).toBe('5d9752a543f1c5869e22c30d');
       expect(payload.email).toBe('millenniumfalcon@mail.com');
       expect(payload.firstName).toBe('Han');
       expect(payload.lastName).toBe('Solo');
+      expect(payload.password).not.toBeDefined();
     });
 
     test('responds with 400 if email is not provided', async () => {
