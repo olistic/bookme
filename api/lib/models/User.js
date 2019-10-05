@@ -24,10 +24,6 @@ userSchema.virtual('fullName').get(function getFullName() {
  * @return {boolean} Whether the password matches or not.
  */
 userSchema.methods.comparePassword = function comparePassword(password) {
-  if (!this.password) {
-    return false;
-  }
-
   return bcrypt.compare(password, this.password);
 };
 
