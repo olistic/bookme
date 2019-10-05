@@ -2,12 +2,13 @@
 
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
+const mongooseHidden = require('mongoose-hidden');
 
 const saltWorkFactor = 10;
 
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true, lowercase: true, trim: true },
-  password: { type: String, required: true, select: false },
+  password: { type: String, required: true, hide: true },
   firstName: { type: String, required: true, trim: true },
   lastName: { type: String, required: true, trim: true },
 });
@@ -41,6 +42,8 @@ async function hashPassword() {
   user.password = await bcrypt.hash(user.password, salt);
 }
 userSchema.pre('save', hashPassword);
+
+userSchema.plugin(mongooseHidden());
 
 const User = mongoose.model('User', userSchema);
 
