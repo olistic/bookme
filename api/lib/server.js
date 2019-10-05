@@ -7,8 +7,11 @@ const connectors = require('./connectors');
 const routes = require('./routes');
 
 const server = Hapi.server({
-  port: 3000,
   host: 'localhost',
+  port: 3000,
+  routes: {
+    cors: true,
+  },
 });
 
 exports.init = async () => {
