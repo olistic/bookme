@@ -1,4 +1,4 @@
-import { home } from './templates.js';
+import home from './templates/home.js';
 import { redirect } from './utils/router.js';
 
 const routes = {
