@@ -1,4 +1,5 @@
 import { get, post } from '../utils/api.js';
+import { redirect } from '../utils/router.js';
 import { removeSession, setSession } from '../utils/session.js';
 
 const baseUrl = 'http://localhost:3000';
@@ -17,18 +18,21 @@ export const logIn = async (email, password) => {
   }
 
   setSession(session);
-  window.location.assign('/');
+
+  redirect('/');
 };
 
 export const logOut = () => {
   removeSession();
-  window.location.assign('/login');
+
+  redirect('/login');
 };
 
 export const getLoggedInUser = async () => {
   const { data: user } = await get(`${baseUrl}/me`);
   if (!user) {
     logOut();
+
     return null;
   }
 

@@ -1,12 +1,13 @@
-import { home, notFound } from './templates.js';
+import { home } from './templates.js';
+import { redirect } from './utils/router.js';
 
 const routes = {
   '/': home,
 };
-const defaultRoute = notFound;
+const notMatch = () => redirect('/');
 
 const authenticatedApp = () => {
-  const template = routes[window.location.pathname] || defaultRoute;
+  const template = routes[window.location.pathname] || notMatch;
   return template();
 };
 
