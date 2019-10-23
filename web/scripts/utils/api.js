@@ -1,5 +1,10 @@
 import { getSession } from './session.js';
 
+const baseUrl =
+  window.location.hostname === 'localhost'
+    ? 'http://localhost:3000'
+    : 'https://bookme-srv.herokuapp.com';
+
 const fetch = async (url, method, data) => {
   const headers = new Headers();
 
@@ -14,7 +19,7 @@ const fetch = async (url, method, data) => {
     body = JSON.stringify(data);
   }
 
-  const response = await window.fetch(url, {
+  const response = await window.fetch(`${baseUrl}${url}`, {
     method,
     headers,
     body,

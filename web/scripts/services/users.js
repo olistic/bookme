@@ -1,9 +1,7 @@
 import { post } from '../utils/api.js';
 
-const baseUrl = 'http://localhost:3000';
-
 export const createUser = async (email, password, firstName, lastName) => {
-  const { data: user, error } = await post(`${baseUrl}/users`, {
+  const { data: user, error } = await post('/users', {
     email,
     password,
     firstName,
