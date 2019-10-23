@@ -1,0 +1,23 @@
+body {
+  background-color: #f6f8f9;
+  color: #172b4d;
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px;
+  line-height: 1.29;
+  text-align: left;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+input,
+select,
+textarea {
+  box-shadow: none;
+}
