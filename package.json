@@ -7,7 +7,8 @@
     "lint:fix": "npm run lint --fix",
     "pretest": "npm run lint",
     "test": "jest",
-    "mongodb": "run-rs -k -v 4.2.0"
+    "mongodb": "run-rs -k -v 4.2.0",
+    "postinstall": "npm install --prefix api && npm install --prefix web"
   },
   "repository": "https://github.com/olistic/bookme.git",
   "author": "Matías Olivera <moliverafreire@gmail.com>",

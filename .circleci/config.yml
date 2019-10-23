@@ -19,7 +19,7 @@ aliases:
 
   - &install-deps
     name: Install dependencies
-    command: npm install && (cd api && npm install) && (cd web && npm install)
+    command: npm install
 
 defaults: &defaults
   docker:
