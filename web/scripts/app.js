@@ -1,4 +1,4 @@
-import { render } from '../node_modules/lit-html/lit-html.js';
+import { render } from 'https://unpkg.com/lit-html?module';
 
 import authenticatedApp from './authenticatedApp.js';
 import unauthenticatedApp from './unauthenticatedApp.js';

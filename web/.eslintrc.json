@@ -1,5 +1,6 @@
 {
   "rules": {
-    "import/extensions": ["error", { "js": "always" }]
+    "import/extensions": ["error", { "js": "always" }],
+    "import/no-unresolved": ["error", { "ignore": ["^https://"] }]
   }
 }
