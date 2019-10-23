@@ -1,0 +1,41 @@
+aliases:
+  - &generate-cache-key
+    name: Generate cache key
+    command: shasum package-lock.json api/package-lock.json web/package-lock.json > /tmp/cache-key
+
+  - &restore-cache
+    name: Restore npm package cache
+    keys:
+      - npm-packages-{{ checksum "/tmp/cache-key" }}
+      - npm-packages-
+
+  - &save-cache
+    name: Save npm package cache
+    key: npm-packages-{{ checksum "/tmp/cache-key" }}
+    paths:
+      - node_modules
+      - api/node_modules
+      - web/node_modules
+
+  - &install-deps
+    name: Install dependencies
+    command: npm install && (cd api && npm install) && (cd web && npm install)
+
+defaults: &defaults
+  docker:
+    - image: circleci/node:10
+  working_directory: ~/bookme
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: *generate-cache-key
+      - restore_cache: *restore-cache
+      - run: *install-deps
+      - save_cache: *save-cache
+      - run:
+          name: Run tests
+          command: npm test
