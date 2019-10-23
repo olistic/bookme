@@ -1,46 +1,29 @@
 import { html } from '../../node_modules/lit-html/lit-html.js';
+import { styleMap } from '../../node_modules/lit-html/directives/style-map.js';
 
-import { createUser } from '../services/users.js';
-import { logIn } from '../services/auth.js';
+import signupForm from './signupForm.js';
 
-const signup = () => {
-  const handleSubmit = async event => {
-    event.preventDefault();
-
-    const email = event.target.email.value;
-    const password = event.target.password.value;
-    const firstName = event.target.firstName.value;
-    const lastName = event.target.lastName.value;
-
-    await createUser(email, password, firstName, lastName);
-    await logIn(email, password);
-  };
-
-  return html`
-    <div>
-      <h1>Sign up for bookme</h1>
-      <form @submit=${handleSubmit}>
-        <label>
-          Email:
-          <input name="email" type="email" />
-        </label>
-        <label>
-          Password:
-          <input name="password" type="password" />
-        </label>
-        <label>
-          First name:
-          <input name="firstName" type="text" />
-        </label>
-        <label>
-          Last name:
-          <input name="lastName" type="text" />
-        </label>
-        <button>Sign up</button>
-        <p>Already have an account? <a href="/login">Log in</a></p>
-      </form>
+const signup = () => html`
+  <main style=${styleMap(styles.main)}>
+    <div style=${styleMap(styles.container)}>
+      ${signupForm()}
     </div>
-  `;
+  </main>
+`;
+
+const styles = {
+  main: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+    paddingTop: '40px',
+  },
+  container: {
+    alignItems: 'center',
+    display: 'flex',
+    flex: 1,
+    justifyContent: 'center',
+  },
 };
 
 export default signup;
