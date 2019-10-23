@@ -10,6 +10,9 @@
     "mongodb": "run-rs -k -v 4.2.0",
     "postinstall": "npm install --prefix api && npm install --prefix web"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "repository": "https://github.com/olistic/bookme.git",
   "author": "Matías Olivera <moliverafreire@gmail.com>",
   "license": "MIT",
