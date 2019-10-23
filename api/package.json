@@ -4,7 +4,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "nodemon"
+    "dev": "nodemon",
+    "start": "node index.js"
   },
   "repository": "https://github.com/olistic/bookme/tree/master/api",
   "author": "Matías Olivera <moliverafreire@gmail.com>",

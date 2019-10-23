@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "serve"
+    "dev": "serve"
   },
   "repository": "https://github.com/olistic/bookme/tree/master/web",
   "author": "Matías Olivera <moliverafreire@gmail.com>",
