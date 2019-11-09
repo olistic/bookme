@@ -30,9 +30,24 @@ button.primary:focus {
   background-color: #005ce6;
   border-color: #1e78ff;
 }
+button.secondary {
+  background-color: transparent;
+  border: 2px solid #dfe3e8;
+  color: #1e78ff;
+}
+button.secondary:active,
+button.secondary:focus,
+button.secondary:hover {
+  border-color: #1e78ff;
+}
 
 button.large {
   font-size: 16px;
   height: 48px;
   padding: 0 24px;
+}
+button.medium {
+  font-size: 14px;
+  height: 40px;
+  padding: 0 16px;
 }
