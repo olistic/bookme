@@ -53,7 +53,7 @@ const styles = {
   form: {
     backgroundColor: '#ffffff',
     borderRadius: '6px',
-    boxShadow: '',
+    boxShadow: '0 2px 2px 0 rgba(0, 25, 85, 0.04)',
     display: 'flex',
     flexDirection: 'column',
     maxWidth: '100%',
