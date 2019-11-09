@@ -1,3 +1,11 @@
+*,
+::before,
+::after {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  transition: all 0.2s ease, visibility 0s;
+}
+
 body {
   background-color: #f6f8f9;
   color: #172b4d;
