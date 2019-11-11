@@ -6,7 +6,9 @@ import { logOut } from '../services/auth.js';
 const home = () => html`
   <div>
     <h1 style=${styleMap(styles.heading)}>Welcome to <strong>bookme</strong></h1>
-    <button @click=${logOut} class="secondary medium" type="button">Log out</button>
+    <button @click=${logOut} class="button secondary medium" type="button">
+      Log out
+    </button>
   </div>
 `;
 
