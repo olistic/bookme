@@ -14,4 +14,6 @@ const renderApp = async () => {
   }
 };
 
+window.addEventListener('auth', renderApp);
+
 renderApp();
