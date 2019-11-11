@@ -1,4 +1,4 @@
-button {
+.button {
   align-items: center;
   border-radius: 4px;
   cursor: pointer;
@@ -8,45 +8,45 @@ button {
   min-width: 168px;
   white-space: nowrap;
 }
-button:hover {
+.button:hover {
   text-decoration: none;
 }
-button:focus {
+.button:focus {
   outline: none;
 }
 
-button.primary {
+.button.primary {
   background-color: #1e78ff;
   border: 2px solid #1e78ff;
   box-shadow: 0 2px 2px 0 rgba(0, 25, 85, 0.04);
   color: #ffffff;
 }
-button.primary:hover {
+.button.primary:hover {
   background-color: #005ce6;
   border-color: #005ce6;
 }
-button.primary:active,
-button.primary:focus {
+.button.primary:active,
+.button.primary:focus {
   background-color: #005ce6;
   border-color: #1e78ff;
 }
-button.secondary {
+.button.secondary {
   background-color: transparent;
   border: 2px solid #dfe3e8;
   color: #1e78ff;
 }
-button.secondary:active,
-button.secondary:focus,
-button.secondary:hover {
+.button.secondary:active,
+.button.secondary:focus,
+.button.secondary:hover {
   border-color: #1e78ff;
 }
 
-button.large {
+.button.large {
   font-size: 16px;
   height: 48px;
   padding: 0 24px;
 }
-button.medium {
+.button.medium {
   font-size: 14px;
   height: 40px;
   padding: 0 16px;

@@ -44,7 +44,7 @@ const signupForm = () => {
           <input name="lastName" placeholder="Doe" type="text" />
         </label>
       </div>
-      <button class="primary large">Sign up</button>
+      <button class="button primary large">Sign up</button>
     </form>
   `;
 };

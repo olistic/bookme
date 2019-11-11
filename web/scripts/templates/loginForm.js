@@ -28,7 +28,7 @@ const loginForm = () => {
           <input name="password" placeholder="********" type="password" />
         </label>
       </div>
-      <button class="primary large">Log in</button>
+      <button class="button primary large">Log in</button>
     </form>
   `;
 };
