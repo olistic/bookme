@@ -2,6 +2,11 @@ import { get, post } from '../utils/api.js';
 import { navigate } from '../utils/router.js';
 import { removeSession, setSession } from '../utils/session.js';
 
+/**
+ * Custom event fired when authentication status changes.
+ */
+const authEvent = new CustomEvent('auth');
+
 export const logIn = async (email, password) => {
   const { data: session, error } = await post('/sessions', {
     email,
@@ -17,11 +22,15 @@ export const logIn = async (email, password) => {
 
   setSession(session);
 
+  window.dispatchEvent(authEvent);
+
   navigate('/');
 };
 
 export const logOut = () => {
   removeSession();
+
+  window.dispatchEvent(authEvent);
 
   navigate('/login');
 };
