@@ -8,6 +8,7 @@
   },
   "extends": ["airbnb-base", "plugin:prettier/recommended"],
   "rules": {
+    "max-classes-per-file": "off",
     "no-underscore-dangle": [
       "error",
       { "allow": ["__MONGO_DB_NAME__", "__MONGO_URI__"] }

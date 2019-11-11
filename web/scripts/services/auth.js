@@ -1,5 +1,5 @@
 import { get, post } from '../utils/api.js';
-import { redirect } from '../utils/router.js';
+import { navigate } from '../utils/router.js';
 import { removeSession, setSession } from '../utils/session.js';
 
 export const logIn = async (email, password) => {
@@ -17,13 +17,13 @@ export const logIn = async (email, password) => {
 
   setSession(session);
 
-  redirect('/');
+  navigate('/');
 };
 
 export const logOut = () => {
   removeSession();
 
-  redirect('/login');
+  navigate('/login');
 };
 
 export const getLoggedInUser = async () => {
