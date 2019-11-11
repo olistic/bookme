@@ -1,16 +1,15 @@
 import login from './templates/login.js';
 import signup from './templates/signup.js';
-import { redirect } from './utils/router.js';
+import { Route, Router } from './utils/router.js';
 
-const routes = {
-  '/login': login,
-  '/signup': signup,
-};
-const notMatch = () => redirect('/login');
+const loginRoute = new Route('/login', login);
+const signupRoute = new Route('/signup', signup);
+const routes = [loginRoute, signupRoute];
 
-const unauthenticatedApp = () => {
-  const template = routes[window.location.pathname] || notMatch;
-  return template();
-};
+const rootEl = document.getElementById('root');
+
+const router = new Router(routes, rootEl);
+
+const unauthenticatedApp = () => router.init();
 
 export default unauthenticatedApp;

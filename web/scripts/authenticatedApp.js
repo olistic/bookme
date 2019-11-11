@@ -1,14 +1,13 @@
 import home from './templates/home.js';
-import { redirect } from './utils/router.js';
+import { Route, Router } from './utils/router.js';
 
-const routes = {
-  '/': home,
-};
-const notMatch = () => redirect('/');
+const homeRoute = new Route('/', home);
+const routes = [homeRoute];
 
-const authenticatedApp = () => {
-  const template = routes[window.location.pathname] || notMatch;
-  return template();
-};
+const rootEl = document.getElementById('root');
+
+const router = new Router(routes, rootEl);
+
+const authenticatedApp = () => router.init();
 
 export default authenticatedApp;
