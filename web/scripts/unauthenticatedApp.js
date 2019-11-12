@@ -2,8 +2,8 @@ import login from './templates/login.js';
 import signup from './templates/signup.js';
 import { Route, Router } from './utils/router.js';
 
-const loginRoute = new Route('/login', login);
-const signupRoute = new Route('/signup', signup);
+const loginRoute = new Route('/login', login, true);
+const signupRoute = new Route('/signup', signup, true);
 const routes = [loginRoute, signupRoute];
 
 const rootEl = document.getElementById('root');
