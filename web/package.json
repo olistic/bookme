@@ -9,7 +9,8 @@
   "author": "Matías Olivera <moliverafreire@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "lit-html": "^1.1.2"
+    "lit-html": "^1.1.2",
+    "path-to-regexp": "^5.0.0"
   },
   "devDependencies": {
     "serve": "^11.2.0"
