@@ -1,7 +1,7 @@
 import home from './templates/home.js';
 import { Route, Router } from './utils/router.js';
 
-const homeRoute = new Route('/', home);
+const homeRoute = new Route('/', home, true);
 const routes = [homeRoute];
 
 const rootEl = document.getElementById('root');
