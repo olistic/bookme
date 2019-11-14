@@ -2,29 +2,18 @@ import { html } from '../../node_modules/lit-html/lit-html.js';
 import { styleMap } from '../../node_modules/lit-html/directives/style-map.js';
 
 import signupForm from './signupForm.js';
-import unauthenticatedHeader from './unauthenticatedHeader.js';
+import unauthenticatedPage from './unauthenticatedPage.js';
 
-const signup = () => html`
-  <main style=${styleMap(styles.main)}>
-    ${unauthenticatedHeader()}
-    <div style=${styleMap(styles.container)}>
-      ${signupForm()}
-    </div>
-  </main>
+const navigationBar = () => html`
+  <p style=${styleMap(styles.text)}>Already have an account?</p>
+  <a class="button secondary medium" data-link href="/login">Log in</a>
 `;
 
+const signup = () => unauthenticatedPage(signupForm, navigationBar);
+
 const styles = {
-  main: {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
-    paddingTop: '40px',
-  },
-  container: {
-    alignItems: 'center',
-    display: 'flex',
-    flex: 1,
-    justifyContent: 'center',
+  text: {
+    margin: '0 24px 0 0',
   },
 };
 
